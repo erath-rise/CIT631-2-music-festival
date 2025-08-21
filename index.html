@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAU 音乐节 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- 主导航 -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <div class="logo">🎵 NAU</div>
+                <ul class="nav-links" id="primary-navigation">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#news">最新资讯</a></li>
+                    <li><a href="#artists">艺人阵容</a></li>
+                    <li><a href="#tickets">票务信息</a></li>
+                    <li><a href="#streaming">在线直播</a></li>
+                </ul>
+                <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="打开主菜单">
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <main>
+            <!-- 英雄区域 -->
+            <section class="hero-section" id="home">
+                <div class="hero-content">
+                    <h1>NAU 音乐节</h1>
+                    <div class="subtitle">2025年夏季最震撼的音乐盛典</div>
+                    <button class="cta-button">立即购票</button>
+                </div>
+                <div class="hero-indicators">
+                    <div class="indicator active"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                </div>
+            </section>
+
+            <div class="main-content">
+                <!-- 特色新闻 -->
+                <section class="featured-section" id="news">
+                    <div class="section-header">
+                        <h2 class="section-title">最新资讯</h2>
+                        <a href="#" class="view-all">查看全部</a>
+                    </div>
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <div class="news-image"></div>
+                            <div class="news-content">
+                                <div class="news-category">艺人公告</div>
+                                <h3 class="news-title">国际知名DJ Calvin Harris确认加盟NAU音乐节</h3>
+                                <div class="news-date">2024年1月15日</div>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <div class="news-image"></div>
+                            <div class="news-content">
+                                <div class="news-category">票务信息</div>
+                                <h3 class="news-title">早鸟票限时优惠，享受6折超值价格</h3>
+                                <div class="news-date">2024年1月12日</div>
+                            </div>
+                        </article>
+                        <article class="news-card">
+                            <div class="news-image"></div>
+                            <div class="news-content">
+                                <div class="news-category">现场体验</div>
+                                <h3 class="news-title">全新舞台设计曝光，360度沉浸式音乐体验</h3>
+                                <div class="news-date">2024年1月10日</div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- 艺人阵容部分 -->
+                <section class="artists-section" id="artists">
+                    <div class="section-header">
+                        <h2 class="section-title">明星阵容</h2>
+                        <a href="#" class="view-all">查看全部艺人</a>
+                    </div>
+                    <div class="artists-grid">
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <div class="artist-badge">头条艺人</div>
+                                <div class="artist-overlay"></div>
+                            </div>
+                            <div class="artist-info">
+                                <div class="artist-genre">电子音乐</div>
+                                <h3 class="artist-name">Calvin Harris</h3>
+                                <p class="artist-description">全球顶级DJ，多次获得格莱美奖提名，代表作品《Feel So Close》《Summer》</p>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <div class="artist-badge">特邀嘉宾</div>
+                                <div class="artist-overlay"></div>
+                            </div>
+                            <div class="artist-info">
+                                <div class="artist-genre">流行摇滚</div>
+                                <h3 class="artist-name">Imagine Dragons</h3>
+                                <p class="artist-description">美国摇滚乐队，《Radioactive》《Demons》等热门单曲风靡全球</p>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <div class="artist-badge">国际巨星</div>
+                                <div class="artist-overlay"></div>
+                            </div>
+                            <div class="artist-info">
+                                <div class="artist-genre">电子舞曲</div>
+                                <h3 class="artist-name">David Guetta</h3>
+                                <p class="artist-description">法国DJ制作人，电子舞曲界传奇人物，多白金销量艺人</p>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <div class="artist-badge">华语之光</div>
+                                <div class="artist-overlay"></div>
+                            </div>
+                            <div class="artist-info">
+                                <div class="artist-genre">华语流行</div>
+                                <h3 class="artist-name">周杰伦</h3>
+                                <p class="artist-description">华语乐坛天王，创作才子，将带来经典金曲和最新作品</p>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <div class="artist-badge">新生代</div>
+                                <div class="artist-overlay"></div>
+                            </div>
+                            <div class="artist-info">
+                                <div class="artist-genre">独立摇滚</div>
+                                <h3 class="artist-name">Arctic Monkeys</h3>
+                                <p class="artist-description">英国独立摇滚乐队，以独特的音乐风格和现场表演著称</p>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <div class="artist-badge">惊喜嘉宾</div>
+                                <div class="artist-overlay"></div>
+                            </div>
+                            <div class="artist-info">
+                                <div class="artist-genre">说唱嘻哈</div>
+                                <h3 class="artist-name">Post Malone</h3>
+                                <p class="artist-description">美国说唱歌手，融合多种音乐风格，深受年轻观众喜爱</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 推广部分 -->
+                <section class="promo-section">
+                    <div class="promo-card streaming" id="streaming">
+                        <h3 class="promo-title">在线直播频道</h3>
+                        <p class="promo-subtitle">无法到现场？通过我们的多平台直播观看精彩演出！</p>
+                        <div class="promo-buttons">
+                            <a href="#" class="promo-btn">抖音直播</a>
+                            <a href="#" class="promo-btn">B站直播</a>
+                            <a href="#" class="promo-btn">微博直播</a>
+                        </div>
+                    </div>
+                    <div class="promo-card tickets" id="tickets">
+                        <h3 class="promo-title">购票指南</h3>
+                        <p class="promo-subtitle">S.O.U.N.D (Standard and Universal Next-gen Digital) 购票系统</p>
+                        <div class="promo-buttons">
+                            <a href="#" class="promo-btn">立即购买</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">音乐节介绍</a></li>
+                        <li><a href="#">主办方信息</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>参与方式</h3>
+                    <ul>
+                        <li><a href="#">购票须知</a></li>
+                        <li><a href="#">入场指南</a></li>
+                        <li><a href="#">交通信息</a></li>
+                        <li><a href="#">住宿推荐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>服务支持</h3>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">退票政策</a></li>
+                        <li><a href="#">客服中心</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 NAU Music Festival. 保留所有权利。</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // 导航链接动态高亮
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('section[id]');
+        const mainNav = document.querySelector('.main-nav');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navList = document.querySelector('#primary-navigation');
+        
+        // 滚动监听，更新导航活动状态
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}` || 
+                    (current === '' && link.getAttribute('href') === '#')) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // 平滑滚动到对应区域
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    const navHeight = mainNav ? mainNav.offsetHeight : 0;
+                    const targetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - (navHeight + 8);
+                    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+                }
+                // 移动端点击后关闭菜单
+                if (mainNav && mainNav.classList.contains('open')) {
+                    mainNav.classList.remove('open');
+                    if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+        
+        // 移动端菜单开关
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = mainNav.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+            });
+
+            // 视窗变化时复位
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
+                    mainNav.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

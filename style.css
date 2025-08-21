@@ -1,0 +1,591 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* 采用网格布局，auto 1fr auto 表示导航栏、主要内容和页脚分别占据不同的高度*/
+    min-height: 100vh;
+}
+
+/* 主导航 */
+.main-nav {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: flex-end;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff4757;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+/* 汉堡按钮 */
+.nav-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #131313;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-toggle .bar,
+.nav-toggle .bar::before,
+.nav-toggle .bar::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+}
+
+.nav-toggle .bar { top: 19px; left: 10px; transform: translateY(0); }
+.nav-toggle .bar::before { top: 19px; left: 10px; transform: translateY(-6px); }
+.nav-toggle .bar::after { top: 19px; left: 10px; transform: translateY(6px); }
+
+/* 打开状态下图标变叉 */
+.main-nav.open .nav-toggle .bar { transform: rotate(45deg); }
+.main-nav.open .nav-toggle .bar::before { transform: rotate(-90deg); }
+.main-nav.open .nav-toggle .bar::after { opacity: 0; }
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.nav-links a:hover {
+    color: #ff4757;
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.nav-links a.active {
+    color: #ff4757;
+    background: rgba(255, 71, 87, 0.2);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background: #ff4757;
+    border-radius: 1px;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/back-view-crowd-fans-watching-live-concert-performance-6.jpg-psMrSOA75Oes0fiJ8v0B7CBrfnCY89.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ffa502;
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ff4757, #ff6b7a);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 71, 87, 0.3);
+}
+
+/* 主要内容区域 */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* 特色新闻部分 */
+.featured-section {
+    margin-bottom: 80px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.view-all {
+    color: #ff4757;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    background-image: url('images/dj.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.news-card:nth-child(2) .news-image {
+    background-image: url('images/music.png');
+}
+
+.news-card:nth-child(3) .news-image {
+    background-image: url('images/people.png');
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-category {
+    color: #ffa502;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.news-date {
+    color: #888;
+    font-size: 14px;
+}
+
+  /* 艺人阵容部分 */
+.artists-section {
+    margin-bottom: 80px;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.artist-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 71, 87, 0.2);
+}
+
+.artist-image {
+    width: 100%;
+    height: 250px;
+    background-image: url('images/Calvin-Harris.avif');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-card:nth-child(2) .artist-image {
+    background-image: url('images/imagine-dragons.webp');
+}
+
+.artist-card:nth-child(3) .artist-image {
+    background-image: url('images/hi-ibizawebp.webp');
+}
+
+.artist-card:nth-child(4) .artist-image {
+    background-image: url('images/zjl.jpg');
+}
+
+.artist-card:nth-child(5) .artist-image {
+    background-image: url('images/arctic-monkeys.jpeg');
+}
+
+.artist-card:nth-child(6) .artist-image {
+    background-image: url('images/Post-Malone.webp');
+}
+
+.artist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+.artist-info {
+    padding: 20px;
+}
+
+.artist-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.artist-genre {
+    color: #ffa502;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.artist-description {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.artist-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 71, 87, 0.9);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 推广部分 */
+.promo-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.promo-card {
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-card.streaming {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.promo-card.tickets {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.promo-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.promo-subtitle {
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.promo-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.promo-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 页脚 */
+.footer {
+    background: #0a0a0a;
+    padding: 40px 0 20px;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: #ff4757;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff4757;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #ff4757;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .hero-content h1 { font-size: 3rem; }
+    .main-content { padding: 48px 20px; }
+    .section-header { margin-bottom: 32px; }
+    .section-title { font-size: 1.8rem; }
+    .news-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .artist-image { height: 220px; }
+    .promo-card { padding: 32px; }
+
+    .nav-links { gap: 24px; }
+    .nav-links a { padding: 6px 12px; font-size: 15px; }
+}
+@media (max-width: 768px) {
+    /* 导航移动端布局 */
+    .nav-container {
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+    }
+
+    .nav-toggle { display: inline-flex; }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px 16px;
+        border-bottom: 1px solid #222;
+        transform-origin: top center;
+        transform: scaleY(0);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        z-index: 150;
+    }
+
+    .main-nav.open .nav-links {
+        transform: scaleY(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links a { display: block; }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-content { padding: 40px 16px; }
+    .section-header { margin-bottom: 24px; }
+    .section-title { font-size: 1.6rem; }
+    .news-image { height: 180px; }
+    .artist-image { height: 200px; }
+    .promo-card { padding: 24px; }
+    .promo-title { font-size: 1.5rem; }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .promo-section {
+        grid-template-columns: 1fr;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .region-buttons {
+        float: none;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .hero-section { height: 65vh; }
+    .section-title { font-size: 1.4rem; }
+    .news-image { height: 160px; }
+    .artist-image { height: 180px; }
+    .promo-title { font-size: 1.35rem; }
+    .promo-subtitle { font-size: 0.95rem; }
+}
+
+section[id] {
+    scroll-margin-top: 80px;
+}
